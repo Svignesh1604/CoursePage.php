@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #86c5da;
+        }
+
+        .header-title {
+            text-align: center;
+            font-size: 60px;
+            color: crimson;
+            font-weight: bold;
+            margin-top: 30px;
+            position: relative;
+
+        }
+
+
+        /* Course Card Styles */
+        .course-card {
+            background-color: #d4ebf2;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 300px;
+        }
+
+        /* Hover Effects for Card */
+        .course-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Title Styles */
+        .course-title {
+            background-color: #666;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+
+        /* Content and Image Styling */
+        .course-content {
+            padding: 15px;
+        }
+
+        .course-img {
+            width: 90%;
+            margin-left: 15px;
+            height: auto;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover Effect on Image */
+        .course-card:hover .course-img {
+            transform: scale(1.1);
+        }
+
+        /* Button Styling */
+        .course-btn {
+            background-color: #d9534f;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            padding: 10px 20px;
+            text-align: center;
+            display: inline-block;
+            width: 100%;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .course-btn:hover {
+            background-color: #c9302c;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Animation for Button */
+        .course-btn {
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Pulse Animation */
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                background-color: #d9534f;
+            }
+
+            50% {
+                transform: scale(1.05);
+                background-color: #c9302c;
+            }
+        }
+
+        /* Title Glow Animation */
+        .course-title {
+            animation: glow 0.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 55px #ff00ff, 0 0 75px #ff00ff;
+            }
+
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00ff, 0 0 60px #ff00ff, 0 0 80px #ff00ff, 0 0 100px #ff00ff, 0 0 150px #ff00ff;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .course-card {
+                margin: 10px;
+                /* Reduce margin for better fit */
+            }
+        }
+
+        /* Mobile View */
+        @media (max-width: 480px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .course-card {
+                margin: 5px;
+                gap: 20px;
+                /* Minimal margin for compact layout */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="header-title">Explore Our Courses</h1>
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Course Card 1 -->
+            <div class="col-md-4">
+                <div class="course-card">
+                    <div class="course-title">Data Science</div>
+                    <div class="course-content">
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> 2 years including on-the-job
+                            training/internship.</p>
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> Data science is a multidisciplinary field
+                            that uses statistical and computational methods to extract insights and knowledge from data.
+                        </p>
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> knowledge from various fields such as
+                            statistics, computer science, mathematics, and domain expertise.</p>
+                        <img src="Images/data science.jpeg"
+                            alt="Course Image" class="course-img">
+                        <a href="DataScience.html" class="course-btn">To More learn About it</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Card 2 -->
+            <div class="col-md-4">
+                <div class="course-card">
+                    <div class="course-title">Data Analyst</div>
+                    <div class="course-content">
+                        <p><strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> 2 years including on-the-job
+                            training/internship.</p>
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> Our Data Analyst with Python career track
+                            covers everything you need to know about the process and will teach you how to analyze data
+                            from scratch.</p>
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> Technical skills form the backbone of a
+                            data analyst's expertise..</p>
+                        <img src="Images/DA.png"
+                            alt="Course Image" class="course-img">
+                        <a href="DataAnlayst.html" class="course-btn">To More learn About it</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Card 3 -->
+            <div class="col-md-4">
+                <div class="course-card">
+                    <div class="course-title">Java</div>
+                    <div class="course-content">
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> 2 years including on-the-job
+                            training/internship.</p>
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> The intention of using this language is
+                            to give relief to the developers from writing codes for every platform. The term WORA, write
+                            once and run everywhere is often associated with this language..</p>
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong>Java is an object-oriented, class-based
+                            programming language.</p>
+                        <img src="Images/javaT.png"
+                            alt="Course Image" class="course-img">
+                        <a href="Java.html" class="course-btn">To More learn About it</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="course-card">
+                    <div class="course-title">Web Development</div>
+                    <div class="course-content">
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> 2 years including on-the-job
+                            training/internship.</p>
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> Creating, building, and maintaining of
+                            websitesWeb Development. </p>
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> It includes aspects such as web design,
+                            web publishing, web programming, and database management.</p>
+                        <img src="Images/Web-Development.jpg"
+                            alt="Course Image" class="course-img">
+                        <a href="WD.html" class="course-btn">To More learn About it</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="course-card">
+                    <div class="course-title">UI/UX Design</div>
+                    <div class="course-content">
+                        <p><strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> 2 years including on-the-job
+                            training/internship.</p>
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> UI refers to the screens and other visual elements that you interact with when using a website, app,
+                            or other electronic device.</p>
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> UX refers to the entire interaction you
+                            have with a product, including how you feel about the interaction.</p>
+                        <img src="Images/ui-ux.jpeg"
+                            alt="Course Image" class="course-img">
+                        <a href="Design.html" class="course-btn">To More learn About it</a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+
+            <div class="col-md-4">
+                <div class="course-card">
+                    <div class="course-title">Software Testing</div>
+                    <div class="course-content">
+                        <p><strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> 2 years including on-the-job
+                            training/internship.</p>
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> Software Testing is a method to assess
+                            the functionality of the software program..</p>
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> The process checks whether the actual
+                            software matches the expected requirements and ensures the software is bug-free.</p>
+                        <img src="Images/Testing.png"
+                            alt="Course Image" class="course-img">
+                        <a href="Testing.html" class="course-btn">To More learn About it</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--  *****   Link To Font Awsome Icons   *****  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+    <!--  *****   Link To Owl Carousel   *****  -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+    <!-- 
+    - primary meta tag
+  -->
+    <title>GR Course</title>
+    <!-- 
+    - favicon
+  -->
+    <link rel="shortcut icon" href="Images/logo.jpg" type="image/svg+xml" />
+    <!-- 
+    - custom css link
+  -->
+    <link rel="stylesheet" href="index.css">
+
+    <!-- 
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css?family=Work Sans" rel="stylesheet" />
+
+    <!-- 
+    - preload images
+  -->
+    <link rel="preload" as="image" href="Images/hero-bg.svg" />
+    <link rel="preload" as="image" href="Images/hero-banner-1.jpg" />
+    <link rel="preload" as="image" href="Images/hero-banner-2.jpg" />
+    <link rel="preload" as="image" href="Images/hero-shape-1.svg" />
+    <link rel="preload" as="image" href="Images/hero-shape-2.png" />
+</head>
+
+<body id="top">
+    <!-- 
+    - #HEADER
+  -->
+
+    <header class="header" data-header>
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="Images/logo.jpg" width="50" height="25" alt="logo" />
+            </a>
+
+            <nav class="navbar" data-navbar>
+                <div class="wrapper">
+                    <a href="#" class="logo">
+                        <img src="Images/logo.jpg" width="50" height="20" alt="logo" />
+                    </a>
+
+                    <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+                        <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+                    </button>
+                </div>
+
+                <ul class="navbar-list">
+                    <li class="navbar-item">
+                        <a href="#home" class="navbar-link" data-nav-link>Home</a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="#about" class="navbar-link" data-nav-link>About</a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="CourseCard.html" class="navbar-link" data-nav-link>Courses</a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="blog.html" class="navbar-link" data-nav-link>Blog</a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="#" class="navbar-link" data-nav-link>Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="header-action-btn" aria-label="toggle search" title="Search">
+                    <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+                </button>
+
+                <button class="header-action-btn" aria-label="heart" title="Heart">
+                    <ion-icon name="heart-circle-outline">
+                        aria-hidden="true"></ion-icon>
+
+                    <span class="btn-badge">0</span>
+                </button>
+
+                <a href="CourseCard.html" class="btn has-before">
+                    <span class="span">Enroll Now</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+
+                <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+                    <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+                </button>
+            </div>
+
+            <div class="overlay" data-nav-toggler data-overlay></div>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <!-- 
+        - #HERO
+      -->
+
+            <section class="section hero has-bg-image" id="home" aria-label="home"
+                style="background-image: url('Images/hero-bg.svg')">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="h1 section-title">
+                            The Best Program to <span class="span">Enroll</span> for
+                            Exchange
+                        </h1>
+
+                        <p class="hero-text">
+                            Excepteur sint occaecat cupidatat non proident sunt in culpa qui
+                            officia deserunt mollit.
+                        </p>
+
+                        <a href="ExploreCourses.html" class="btn has-before">
+                            <span class="span">Explore courses</span>
+
+                            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                        </a>
+                    </div>
+
+                    <figure class="hero-banner">
+                        <div class="img-holder one" style="--width: 270; --height: 300">
+                            <img src="Images/hero-banner-1.jpg" width="270" height="300" alt="hero banner"
+                                class="img-cover" />
+                        </div>
+
+                        <div class="img-holder two" style="--width: 240; --height: 370">
+                            <img src="Images/hero-banner-2.jpg" width="240" height="370" alt="hero banner"
+                                class="img-cover" />
+                        </div>
+
+                        <img src="Images/hero-shape-1.svg" width="380" height="190" alt="" class="shape hero-shape-1" />
+
+                        <img src="Images/hero-shape-2.png" width="622" height="551" alt="" class="shape hero-shape-2" />
+                    </figure>
+                </div>
+            </section>
+
+            <!-- 
+        - #CATEGORY
+      -->
+
+            <section class="section category" aria-label="category">
+                <div class="container">
+                    <p class="section-subtitle">Categories</p>
+
+                    <h2 class="h2 section-title">
+                        Online <span class="span">Classes</span> For Learning.
+                    </h2>
+
+                    <p class="section-text">
+                        Consectetur adipiscing elit sed do eiusmod tempor.
+                    </p>
+
+                    <ul class="grid-list">
+                        <li>
+                            <div class="category-card" style="--color: 170, 75%, 41%">
+                                <div class="card-icon">
+                                    <img src="Images/category-1.svg" width="40" height="40" loading="lazy"
+                                        alt="Online Degree Programs" class="img" />
+                                </div>
+
+                                <h3 class="h3">
+                                    <a href="#" class="card-title">Beginner Programs</a>
+                                </h3>
+
+                                <p class="card-text">
+                                    Lorem ipsum dolor consec tur elit adicing sed umod tempor.
+                                </p>
+
+                                <span class="card-badge">200+ Courses</span>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="category-card" style="--color: 351, 83%, 61%">
+                                <div class="card-icon">
+                                    <img src="Images/category-2.svg" width="40" height="40" loading="lazy"
+                                        alt="Non-Degree Programs" class="img" />
+                                </div>
+
+                                <h3 class="h3">
+                                    <a href="#" class="card-title">Interlevel Programs</a>
+                                </h3>
+
+                                <p class="card-text">
+                                    Lorem ipsum dolor consec tur elit adicing sed umod tempor.
+                                </p>
+
+                                <span class="card-badge">150+ Courses</span>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="category-card" style="--color: 229, 75%, 58%">
+                                <div class="card-icon">
+                                    <img src="Images/category-3.svg" width="40" height="40" loading="lazy"
+                                        alt="Off-Campus Programs" class="img" />
+                                </div>
+
+                                <h3 class="h3">
+                                    <a href="#" class="card-title">Advanced Programs</a>
+                                </h3>
+
+                                <p class="card-text">
+                                    Lorem ipsum dolor consec tur elit adicing sed umod tempor.
+                                </p>
+
+                                <span class="card-badge">120+ Courses</span>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="category-card" style="--color: 42, 94%, 55%">
+                                <div class="card-icon">
+                                    <img src="Images/category-4.svg" width="40" height="40" loading="lazy"
+                                        alt="Hybrid Distance Programs" class="img" />
+                                </div>
+
+                                <h3 class="h3">
+                                    <a href="#" class="card-title">Non-IT Programs</a>
+                                </h3>
+
+                                <p class="card-text">
+                                    Lorem ipsum dolor consec tur elit adicing sed umod tempor.
+                                </p>
+
+                                <span class="card-badge">50 Courses</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 
+        - #ABOUT
+      -->
+
+            <section class="section about" id="about" aria-label="about">
+                <div class="container">
+                    <figure class="about-banner">
+                        <div class="img-holder" style="--width: 520; --height: 370">
+                            <img src="Images/about-banner.jpg" width="520" height="370" loading="lazy"
+                                alt="about banner" class="img-cover" />
+                        </div>
+
+                        <img src="Images/about-shape-2.svg" width="371" height="220" loading="lazy" alt=""
+                            class="shape about-shape-2" />
+
+                        <img src="Images/about-shape-3.png" width="722" height="528" loading="lazy" alt=""
+                            class="shape about-shape-3" />
+                    </figure>
+
+                    <div class="about-content">
+                        <p class="section-subtitle">About Us</p>
+
+                        <h2 class="h2 section-title">
+                            Over 10 Years in <span class="span">Distant learning</span> for
+                            Skill Development
+                        </h2>
+
+                        <p class="section-text">
+                            Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod
+                            ex tempor incididunt labore dolore magna aliquaenim ad minim.
+                        </p>
+
+                        <ul class="about-list">
+                            <li class="about-item">
+                                <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+
+                                <span class="span">Expert Trainers</span>
+                            </li>
+
+                            <li class="about-item">
+                                <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+
+                                <span class="span">Online Remote Learning</span>
+                            </li>
+
+                            <li class="about-item">
+                                <ion-icon name="checkmark-done-outline" aria-hidden="true"></ion-icon>
+
+                                <span class="span">Lifetime Access</span>
+                            </li>
+                        </ul>
+
+                        <img src="Images/about-shape-4.svg" width="100" height="100" loading="lazy" alt=""
+                            class="shape about-shape-4" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- 
+        - #COURSE
+      -->
+
+            <section class="section course" id="courses" aria-label="course">
+                <div class="container">
+                    <p class="section-subtitle">Popular Courses</p>
+
+                    <h2 class="h2 section-title">Pick A Course To Get Started</h2>
+
+                    <ul class="grid-list">
+                        <li>
+                            <div class="course-card">
+                                <figure class="card-banner img-holder" style="--width: 370; --height: 220">
+                                    <img src="Images/course-1.jpg" width="370" height="220" loading="lazy"
+                                        alt="Build Responsive Real- World Websites with HTML and CSS"
+                                        class="img-cover" />
+                                </figure>
+
+                                <div class="abs-badge">
+                                    <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+
+                                    <span class="span">3 Weeks</span>
+                                </div>
+
+                                <div class="card-content">
+                                    <span class="badge">Beginner</span>
+
+                                    <h3 class="h3">
+                                        <a href="#" class="card-title">Build Responsive Real- World Websites with HTML
+                                            and
+                                            CSS</a>
+                                    </h3>
+
+                                    <div class="wrapper">
+                                        <div class="rating-wrapper">
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                        </div>
+
+                                        <p class="rating-text">(4.5/5 Rating)</p>
+                                    </div>
+
+                                    <data class="price" value="29">$29.00</data>
+
+                                    <ul class="card-meta-list">
+                                        <li class="card-meta-item">
+                                            <ion-icon name="library-outline" aria-hidden="true"></ion-icon>
+
+                                            <span class="span">8 Lessons</span>
+                                        </li>
+
+                                        <li class="card-meta-item">
+                                            <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+
+                                            <span class="span">20 Students</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="course-card">
+                                <figure class="card-banner img-holder" style="--width: 370; --height: 220">
+                                    <img src="Images/course-2.jpg" width="370" height="220" loading="lazy"
+                                        alt="Java Programming Masterclass for Software Developers" class="img-cover" />
+                                </figure>
+
+                                <div class="abs-badge">
+                                    <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+
+                                    <span class="span">8 Weeks</span>
+                                </div>
+
+                                <div class="card-content">
+                                    <span class="badge">Advanced</span>
+
+                                    <h3 class="h3">
+                                        <a href="#" class="card-title">Java Programming Masterclass for Software
+                                            Developers</a>
+                                    </h3>
+
+                                    <div class="wrapper">
+                                        <div class="rating-wrapper">
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                        </div>
+
+                                        <p class="rating-text">(4.9/5 Rating)</p>
+                                    </div>
+
+                                    <data class="price" value="49">$49.00</data>
+
+                                    <ul class="card-meta-list">
+                                        <li class="card-meta-item">
+                                            <ion-icon name="library-outline" aria-hidden="true"></ion-icon>
+
+                                            <span class="span">15 Lessons</span>
+                                        </li>
+
+                                        <li class="card-meta-item">
+                                            <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+
+                                            <span class="span">35 Students</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="course-card">
+                                <figure class="card-banner img-holder" style="--width: 370; --height: 220">
+                                    <img src="Images/course-3.jpg" width="370" height="220" loading="lazy"
+                                        alt="The Complete Camtasia Course for Content Creators" class="img-cover" />
+                                </figure>
+
+                                <div class="abs-badge">
+                                    <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+
+                                    <span class="span">6 Weeks</span>
+                                </div>
+
+                                <div class="card-content">
+                                    <span class="badge">Intermediate</span>
+
+                                    <h3 class="h3">
+                                        <a href="#" class="card-title">The Complete Camtasia Course for Content
+                                            Creators</a>
+                                    </h3>
+
+                                    <div class="wrapper">
+                                        <div class="rating-wrapper">
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                            <ion-icon name="star"></ion-icon>
+                                        </div>
+
+                                        <p class="rating-text">(4.2/5 Rating)</p>
+                                    </div>
+
+                                    <data class="price" value="35">$35.00</data>
+
+                                    <ul class="card-meta-list">
+                                        <li class="card-meta-item">
+                                            <ion-icon name="library-outline" aria-hidden="true"></ion-icon>
+
+                                            <span class="span">13 Lessons</span>
+                                        </li>
+
+                                        <li class="card-meta-item">
+                                            <ion-icon name="people-outline" aria-hidden="true"></ion-icon>
+
+                                            <span class="span">18 Students</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <a href="ExploreCourses.html" class="btn has-before">
+                        <span class="span">Browse more courses</span>
+
+                        <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                    </a>
+                </div>
+            </section>
+
+            <!-- 
+        - #STATE
+      -->
+
+            <section class="section stats" aria-label="stats">
+                <div class="container">
+                    <ul class="grid-list">
+                        <li>
+                            <div class="stats-card" style="--color: 170, 75%, 41%">
+                                <h3 class="card-title">29.3k</h3>
+
+                                <p class="card-text">Student Enrolled</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="stats-card" style="--color: 351, 83%, 61%">
+                                <h3 class="card-title">32.4K</h3>
+
+                                <p class="card-text">Class Completed</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="stats-card" style="--color: 260, 100%, 67%">
+                                <h3 class="card-title">100%</h3>
+
+                                <p class="card-text">Satisfaction Rate</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="stats-card" style="--color: 42, 94%, 55%">
+                                <h3 class="card-title">354+</h3>
+
+                                <p class="card-text">Top Instructors</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!--   *** Website Container Starts ***   -->
+    <div class="website-container">
+       
+        <section class="partners">
+            <h3>Our Trusted Partners around the World</h3>
+            <div class="owl-carousel owl-theme partners-slider">
+                <div class="item brand-item">
+                    <img src="Images/almarah.png" />
+                </div>
+                <div class="item brand-item">
+                    <img src="Images/etimadya.png" />
+                </div>
+                <div class="item brand-item">
+                    <img src="Images/khostan.png" />
+                </div>
+                <div class="item brand-item">
+                    <img src="Images/matoontapa.png" />
+                </div>
+                <div class="item brand-item">
+                    <img src="Images/nadershakot.png" />
+                </div>
+                <div class="item brand-item">
+                    <img src="Images/torghar.png" />
+                </div>
+            </div>
+        </section>
+       
+    </div>
+
+    <div class="container-slide" id="first">
+        <div class="header-slide">
+            <h1>Certification and Credentials</h1>
+            <p>
+                Earn certificates of completion or industry-recognized credentials to
+                validate your skills and enhance your professional credibility.
+                Validate your skills and enhance your professional credibility with
+                industry-recognized certificates upon course completion.
+            </p>
+            <div class="certifications">
+                <div class="certification">
+                    <hr />
+                    <div class="feature-number">
+                        <div class="num">1</div>
+                    </div>
+                    <h3>Professional Development</h3>
+                    <p>
+                        Professional development grow your skills, advance your career.
+                    </p>
+                </div>
+                <div class="certification">
+                    <hr />
+                    <div class="feature-number">
+                        <div class="num">2</div>
+                    </div>
+
+                    <h3>Pathways to Advancement</h3>
+                    <p>
+                        Propel your career forward, embrace new opportunities, & lead in
+                        your field.
+                    </p>
+                </div>
+                <div class="certification">
+                    <hr />
+                    <div class="feature-number">
+                        <div class="num">3</div>
+                    </div>
+                    <h3>Validation of Skills</h3>
+                    <p>
+                        Validate your expertise, earn respected certificates recognized by
+                        employers.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Second Slide-->
+
+    <div class="container-slide2" id="second">
+        <div class="header-slide2">
+            <h1>Flexible Learning Options</h1>
+            <p>
+                With our flexible learning options, you have the freedom to study
+                whenever and wherever it's convenient for you. Whether you're an early
+                bird or a night owl, our platform is accessible 24/7, allowing you to
+                learn at your own pace and on your own schedule.
+            </p>
+            <div class="certifications2">
+                <div class="certification2">
+                    <hr />
+                    <div class="feature-number2">
+                        <div class="num2">1</div>
+                    </div>
+                    <h3>Study Anytime, Anywhere</h3>
+                    <p>
+                        Access courses 24/7, fitting learning into your schedule, wherever
+                        you are.
+                    </p>
+                </div>
+                <div class="certification2">
+                    <hr />
+                    <div class="feature-number2">
+                        <div class="num2">2</div>
+                    </div>
+
+                    <h3>Customized Learning Experience</h3>
+                    <p>
+                        Customize learning journey choices to fit your unique needs &
+                        goals.
+                    </p>
+                </div>
+                <div class="certification2">
+                    <hr />
+                    <div class="feature-number2">
+                        <div class="num2">3</div>
+                    </div>
+                    <h3>Access to Course Materials</h3>
+                    <p>
+                        24/7 Access study on your schedule, with materials at your
+                        fingertips
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Slider part ends here-->
+
+    <!--Customer Review-->
+    <section class="section course" id="courses" aria-label="course">
+        <div class="container">
+            <p class="section-subtitle">Popular Reviews</p>
+
+            <h2 class="h2 section-title">Know about the Student Reviews.</h2>
+
+            <div class="slider-container">
+                <div class="slider" id="slider">
+                    <div class="card">
+                        <div class="review-card">
+                            <div class="review-img">
+                                <img src="Images/hero-banner-1.jpg" alt="REVEW-IMAGE" />
+                            </div>
+                            <div class="reviewer-name">
+                                <h3>Cameron Williamson</h3>
+                            </div>
+                            <div class="reviewer-location">
+                                <p>Dallas,US</p>
+                            </div>
+                            <div class="reviewer-statement">
+                                I also appreciated the opportunity to connect with other
+                                students and instructors through the platform's community
+                                features, which allowed me to network, share insights, and
+                                collaborate on projects.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="review-card">
+                            <div class="review-img">
+                                <img src="Images/blog-1.jpg" alt="REVEW-IMAGE" />
+                            </div>
+                            <div class="reviewer-name">
+                                <h3>Sun Yung Lee</h3>
+                            </div>
+                            <div class="reviewer-location">
+                                <p>Florida, US</p>
+                            </div>
+                            <div class="reviewer-statement">
+                                I can't say enough positive things about this platform. The
+                                courses are comprehensive and well-paced, with a perfect
+                                balance of theory and hands-on practice that allowed me to
+                                grasp complex concepts quickly.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="review-card">
+                            <div class="review-img">
+                                <img src="Images/blog-2.jpg" alt="REVEW-IMAGE" />
+                            </div>
+                            <div class="reviewer-name">
+                                <h3>Darlene Robertson</h3>
+                            </div>
+                            <div class="reviewer-location">
+                                <p>Toronto, US</p>
+                            </div>
+                            <div class="reviewer-statement">
+                                The instructor's passion for photography was contagious, and
+                                the course projects were both fun and challenging. I've
+                                already seen an improvement in my photography skills. Overall,
+                                a great learning experience.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="review-card">
+                            <div class="review-img">
+                                <img src="Images/blog-3.jpg" alt="REVEW-IMAGE" />
+                            </div>
+                            <div class="reviewer-name">
+                                <h3>Brooklyn Simmons</h3>
+                            </div>
+                            <div class="reviewer-location">
+                                <p>Texas, US</p>
+                            </div>
+                            <div class="reviewer-statement">
+                                I loved this course! The instructor broke down complex data
+                                analysis techniques in easy-to-understand concepts. I feel
+                                much more confident in my data analysis skills now. This
+                                course was fantastic.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="review-card">
+                            <div class="review-img">
+                                <img src="Images/about-banner.jpg" alt="REVEW-IMAGE" />
+                            </div>
+                            <div class="reviewer-name">
+                                <h3>Leslie Alexander</h3>
+                            </div>
+                            <div class="reviewer-location">
+                                <p>New York,US</p>
+                            </div>
+                            <div class="reviewer-statement">
+                                This course exceeded my expectations! The instructor was
+                                patient and provided clear explanations throughout the course.
+                                I feel confident in my web development skills now. Highly
+                                recommend!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="review-card">
+                            <div class="review-img">
+                                <img src="Images/course-1.jpg" alt="REVEW-IMAGE" />
+                            </div>
+                            <div class="reviewer-name">
+                                <h3>Ronald Richards</h3>
+                            </div>
+                            <div class="reviewer-location">
+                                <p>Grorgia, US</p>
+                            </div>
+                            <div class="reviewer-statement">
+                                This course provided a great introduction to creative writing
+                                techniques. The instructor's passion for writing was evident,
+                                and I appreciated the constructive feedback on my assignments.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button1 class="prev" id="prevBtn">&larr;</button1>
+                <button1 class="next" id="nextBtn">&rarr;</button1>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+    - #FOOTER
+  -->
+
+    <footer class="footer" style="background-image: url('./assets/images/footer-bg.png')">
+        <div class="footer-top section">
+            <div class="container grid-list">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <img src="Images/logo.jpg" width="162" height="50" alt="logo" />
+                    </a>
+
+                    <p class="footer-brand-text">
+                        Lorem ipsum dolor amet consecto adi pisicing elit sed eiusm tempor
+                        incidid unt labore dolore.
+                    </p>
+
+                    <div class="wrapper">
+                        <span class="span">Add:</span>
+
+                        <address class="address">70-80 Upper St Norwich NR2</address>
+                    </div>
+
+                    <div class="wrapper">
+                        <span class="span">Call:</span>
+
+                        <a href="tel:+011234567890" class="footer-link">+01 123 4567 890</a>
+                    </div>
+
+                    <div class="wrapper">
+                        <span class="span">Email:</span>
+
+                        <a href="mailto:info@eduweb.com" class="footer-link">info@grnetworks.com</a>
+                    </div>
+                </div>
+
+                <ul class="footer-list">
+                    <li>
+                        <p class="footer-list-title">Online Platform</p>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">About</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Courses</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Instructor</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Events</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Instructor Profile</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Purchase Guide</a>
+                    </li>
+                </ul>
+
+                <ul class="footer-list">
+                    <li>
+                        <p class="footer-list-title">Links</p>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Contact Us</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Gallery</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">News & Articles</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">FAQ's</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Sign In/Registration</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Coming Soon</a>
+                    </li>
+                </ul>
+
+                <div class="footer-list">
+                    <p class="footer-list-title">Contacts</p>
+
+                    <p class="footer-list-text">
+                        Enter your email address to register to our newsletter
+                        subscription
+                    </p>
+
+                    <form action="" class="newsletter-form">
+                        <input type="email" name="email_address" placeholder="Your email" required
+                            class="input-field" />
+
+                        <button type="submit" class="btn has-before">
+                            <span class="span">Subscribe</span>
+
+                            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                        </button>
+                    </form>
+
+                    <ul class="social-list">
+                        <li>
+                            <a href="https://www.facebook.com/gowthamrajnetwork" class="social-link">
+                                <ion-icon name="logo-facebook"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://in.linkedin.com/in/gowthamrajceg" class="social-link">
+                                <ion-icon name="logo-linkedin"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.instagram.com/gowthamraj_ceg/" class="social-link">
+                                <ion-icon name="logo-instagram"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-twitter"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.youtube.com/@GOWTHAMRAJNETWORK" class="social-link">
+                                <ion-icon name="logo-youtube"></ion-icon>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright">
+                    Copyright 2022 All Rights Reserved by
+                    <a href="#" class="copyright-link">GR Networks.com</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 
+    - #BACK TO TOP
+  -->
+
+    <a href="#top" class="back-top-btn" aria-label="back top top" data-back-top-btn>
+        <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+    </a>
+
+    <!-- 
+    - custom js link
+  -->
+  <script src="index.js" defer></script>
+    <!-- 
+    - ionicon link
+  -->
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!--   *** Link To JQuery ***   -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    <!--   *** Link To Owl Carousel ***   -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+</body>
+
+</html>

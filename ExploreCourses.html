@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science Course</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            margin: 0;
+            font-weight: 700;
+        }
+
+        /* Navbar */
+        .navbar {
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 1.1rem;
+            margin: 0 10px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffc107;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+                url('datascience-bg.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .hero .btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background: #ffc107;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hero .btn:hover {
+            background: #e0a800;
+            transform: scale(1.1);
+        }
+
+        /* Course Details Section */
+        #course {
+            background: #fff;
+            padding: 60px 20px;
+            border-top: 5px solid #ffc107;
+            border-bottom: 5px solid #ffc107;
+        }
+
+        #course h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #212529;
+        }
+
+        #course h4 {
+            font-size: 1.6rem;
+            color: #495057;
+        }
+
+        #course ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #course ul li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        #course ul li:before {
+            content: '✔';
+            color: #ffc107;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        /* Instructors Section */
+        #instructors {
+            background: #f1f3f5;
+            padding: 60px 20px;
+        }
+
+        #instructors h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        #instructors .text-center img {
+            border: 5px solid #ffc107;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #instructors .text-center img:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        #instructors h5 {
+            font-size: 1.5rem;
+            margin-top: 15px;
+            color: #212529;
+        }
+
+        /* Testimonials Section */
+        #testimonials {
+            background: linear-gradient(135deg, #ffc107, #f8d34a);
+            color: #212529;
+            padding: 60px 20px;
+        }
+
+        #testimonials h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #212529;
+        }
+
+        blockquote {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            margin: 20px 0;
+        }
+
+        blockquote:before {
+            content: '“';
+            font-size: 4rem;
+            color: #ffc107;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+        }
+
+        blockquote footer {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #6c757d;
+        }
+
+        /* Contact Section */
+        /* Contact Section */
+        .contact-container {
+            text-align: center;
+            padding: 40px 20px;
+            background: #f8f9fa;
+        }
+
+        .contact-container h2 {
+            font-size: 2rem;
+            color: #212529;
+            margin-bottom: 20px;
+        }
+
+        .contact-btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: #fff;
+            background: linear-gradient(90deg, #ffc107, #e0a800);
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .contact-btn:hover {
+            transform: scale(1.1);
+            background: linear-gradient(90deg, #e0a800, #ffc107);
+        }
+
+        /* Popup Styles */
+        .contact-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background: #fff;
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            position: relative;
+        }
+
+        .popup-content h3 {
+            margin-bottom: 20px;
+            color: #212529;
+        }
+
+        .popup-content .form-control {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .popup-content .submit-btn {
+            background: #ffc107;
+            color: #212529;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .popup-content .submit-btn:hover {
+            background: #e0a800;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: #e0a800;
+        }
+
+
+        /* Footer */
+        footer {
+            background: #212529;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .header-title {
+            text-align: center;
+            font-size: 60px;
+            color: crimson;
+            font-weight: bold;
+            margin-top: 30px;
+            position: relative;
+
+        }
+
+
+        /* Course Card Styles */
+        .course-card {
+            background-color: #d4ebf2;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 300px;
+        }
+
+        /* Hover Effects for Card */
+        .course-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Title Styles */
+        .course-title {
+            background-color: #666;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+
+        /* Content and Image Styling */
+        .course-content {
+            padding: 15px;
+        }
+
+        .course-img {
+            width: 90%;
+            margin-left: 15px;
+            height: auto;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover Effect on Image */
+        .course-card:hover .course-img {
+            transform: scale(1.1);
+        }
+
+        /* Button Styling */
+        .course-btn {
+            background-color: #d9534f;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            padding: 10px 20px;
+            text-align: center;
+            display: inline-block;
+            width: 100%;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .course-btn:hover {
+            background-color: #c9302c;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Animation for Button */
+        .course-btn {
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Pulse Animation */
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                background-color: #d9534f;
+            }
+
+            50% {
+                transform: scale(1.05);
+                background-color: #c9302c;
+            }
+        }
+
+        /* Title Glow Animation */
+        .course-title {
+            animation: glow 0.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 55px #ff00ff, 0 0 75px #ff00ff;
+            }
+
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00ff, 0 0 60px #ff00ff, 0 0 80px #ff00ff, 0 0 100px #ff00ff, 0 0 150px #ff00ff;
+            }
+        }
+
+        @media (max-width:1024px) {
+            .container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .course-card {
+                margin: 10px;
+                /* Reduce margin for better fit */
+            }
+        }
+
+        /* Mobile View */
+        @media (max-width: 480px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .course-card {
+                margin: 5px;
+                gap: 20px;
+                /* Minimal margin for compact layout */
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            #course h2,
+            #instructors h2,
+            #testimonials h2,
+            #contact h2 {
+                font-size: 2rem;
+            }
+
+            blockquote {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">GR Network</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#Explore">Explore Course</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#instructors">Instructors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Reviews">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <h1 id="Explore" class="header-title">Explore Our Courses</h1>
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Course Card 1 -->
+            <div class="col-md-4">
+                <div class="course-card">
+                    <div class="course-title">Data Science</div>
+                    <div class="course-content">
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> 2 years including on-the-job
+                            training/internship.</p>
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> Data science is a multidisciplinary field
+                            that uses statistical and computational methods to extract insights and knowledge from data.
+                        </p>
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> knowledge from various fields such as
+                            statistics, computer science, mathematics, and domain expertise.</p>
+                        <img src="Images/data science.jpeg" alt="Course Image" class="course-img">
+                        <a href="DataScience.html" class="course-btn">To More learn About it</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Card 2 -->
+            <div class="col-md-4">
+                <div class="course-card">
+                    <div class="course-title">Data Analyst</div>
+                    <div class="course-content">
+                        <p><strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> 2 years including on-the-job
+                            training/internship.</p>
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> Our Data Analyst with Python career track
+                            covers everything you need to know about the process and will teach you how to analyze data
+                            from scratch.</p>
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> Technical skills form the backbone of a
+                            data analyst's expertise..</p>
+                        <img src="Images/DA.png" alt="Course Image" class="course-img">
+                        <a href="DataAnlayst.html" class="course-btn">To More learn About it</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Card 3 -->
+            <div class="col-md-4">
+                <div class="course-card">
+                    <div class="course-title">Java</div>
+                    <div class="course-content">
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> 2 years including on-the-job
+                            training/internship.</p>
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> The intention of using this language is
+                            to give relief to the developers from writing codes for every platform. The term WORA, write
+                            once and run everywhere is often associated with this language..</p>
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong>Java is an object-oriented, class-based
+                            programming language.</p>
+                        <img src="Images/javaT.png" alt="Course Image" class="course-img">
+                        <a href="Java.html" class="course-btn">To More learn About it</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="course-card">
+                    <div class="course-title">Web Development</div>
+                    <div class="course-content">
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> 2 years including on-the-job
+                            training/internship.</p>
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> Creating, building, and maintaining of
+                            websitesWeb Development. </p>
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> It includes aspects such as web design,
+                            web publishing, web programming, and database management.</p>
+                        <img src="Images/Web-Development.jpg" alt="Course Image" class="course-img">
+                        <a href="WD.html" class="course-btn">To More learn About it</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="course-card">
+                    <div class="course-title">UI/UX Design</div>
+                    <div class="course-content">
+                        <p><strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> 2 years including on-the-job
+                            training/internship.</p>
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> UI refers to the screens and other visual
+                            elements that you interact with when using a website, app,
+                            or other electronic device.</p>
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> UX refers to the entire interaction you
+                            have with a product, including how you feel about the interaction.</p>
+                        <img src="Images/ui-ux.jpeg" alt="Course Image" class="course-img">
+                        <a href="Design.html" class="course-btn">To More learn About it</a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+
+            <div class="col-md-4">
+                <div class="course-card">
+                    <div class="course-title">Software Testing</div>
+                    <div class="course-content">
+                        <p><strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> 2 years including on-the-job
+                            training/internship.</p>
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> Software Testing is a method to assess
+                            the functionality of the software program..</p>
+                        <p> <strong style="color: black;font-size: 20px;">•</strong> <strong
+                                style="color: red;font-size: 20px;">•</strong> The process checks whether the actual
+                            software matches the expected requirements and ensures the software is bug-free.</p>
+                        <img src="Images/Testing.png" alt="Course Image" class="course-img">
+                        <a href="Testing.html" class="course-btn">To More learn About it</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Instructors Section -->
+    <section id="instructors" class="bg-light py-5 ">
+        <div class="container">
+            <h2 class="text-center mb-4">Meet Your Instructors</h2>
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <img src="Images/hero-banner-1.jpg" alt="Instructor 1" class="rounded-circle mb-3" width="150">
+                    <h5>Dr. Jane Doe</h5>
+                    <p>AI & Machine Learning Expert</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="Images/hero-banner-2.jpg" alt="Instructor 2" class="rounded-circle mb-3" width="150">
+                    <h5>Mr. John Smith</h5>
+                    <p>Data Scientist</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img src="Images/instrt2.jpg" alt="Instructor 3" class="rounded-circle mb-3" width="150">
+                    <h5>Ms. Emily Davis</h5>
+                    <p>Big Data Analyst</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="Reviews" class="py-5">
+        <div class="container" style="background-color: cadetblue;">
+            <h2 class="text-center mb-4">What Our Students Say</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <blockquote class="blockquote">
+                        <p>"This course transformed my career in data science!"</p>
+                        <p>"This course helps me to do move next level of my Skill Sets".</p>
+                        <footer class="blockquote-footer" style="color: green;">Alice Johnson</footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-4">
+                    <blockquote class="blockquote">
+                        <p>"Hands-on projects made learning so much easier."</p>
+                        <p>"This course helps me to do move next level of my Skill Sets".</p>
+                        <footer class="blockquote-footer" style="color: green;">Mark Lee</footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-4">
+                    <blockquote class="blockquote">
+                        <p>"The instructors are phenomenal and highly experienced."</p>
+                        <p>"This course helps me to do move next level of my Skill Sets".</p>
+                        <footer class="blockquote-footer" style="color: green;">Sara Kim</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-container">
+            <h2>Need Assistance? Contact Us!</h2>
+            <button class="contact-btn" onclick="openContactForm()">Contact Us Now</button>
+            <div id="contact-popup" class="contact-popup">
+                <div class="popup-content">
+                    <span class="close-btn" onclick="closeContactForm()">&times;</span>
+                    <h3>Get in Touch</h3>
+                    <form>
+                        <input type="text" placeholder="Your Name" class="form-control" required>
+                        <input type="email" placeholder="Your Email" class="form-control" required>
+                        <textarea placeholder="Your Message" class="form-control" rows="4" required></textarea>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts.js"></script>
+    <script>
+        // scripts.js
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Website is loaded');
+        });
+
+    </script>
+    <script>
+        function openContactForm() {
+            document.getElementById('contact-popup').style.display = 'flex';
+        }
+
+        function closeContactForm() {
+            document.getElementById('contact-popup').style.display = 'none';
+        }
+
+    </script>
+</body>
+
+</html>

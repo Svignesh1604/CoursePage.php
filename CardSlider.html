@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Slider</title>
+
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .card {
+            min-width: 50%;
+            /* Adjust for larger screens */
+            height: 400px;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            margin: 2px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .review-card {
+            height: 100%;
+            width: 100%;
+            background-color: #fff;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .review-img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+
+        .review-img img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        .reviewer-location p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .reviewer-statement {
+            font-size: 16px;
+            color: rgb(39, 37, 37);
+            margin-top: 20px;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            overflow: hidden;
+            margin: 0 auto;
+            padding-right: 20px;
+            /* Add padding on the right to ensure the last card shows fully */
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: calc(100% + 20px);
+            /* Increase width slightly to fit last card fully */
+        }
+
+
+        button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            position: absolute;
+            top: 40%;
+            transform: translateY(-50%);
+            z-index: 10;
+            border-radius: 70%;
+            width: 50px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .card {
+                min-width: 33.33%;
+                /* Show three cards on medium screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                min-width: 50%;
+                /* Show two cards on smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                min-width: 100%;
+                /* Show one card on extra small screens */
+            }
+
+            button {
+                width: 60px;
+                font-size: 14px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="slider-container">
+        <div class="slider" id="slider">
+            <div class="card">
+                <div class="review-card">
+                    <div class="review-img">
+                        <img src="IMAGES/re (1).jpg" alt="REVEW-IMAGE">
+                    </div>
+                    <div class="reviewer-name">
+                        <h3>Cameron Williamson</h3>
+                    </div>
+                    <div class="reviewer-location">
+                        <p>Dallas,US</p>
+                    </div>
+                    <div class="reviewer-statement">
+                        I also appreciated the opportunity to connect with other students and instructors through the
+                        platform's community features, which allowed me to network, share insights, and collaborate on
+                        projects.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="review-card">
+                    <div class="review-img">
+                        <img src="IMAGES/re (2).jpg" alt="REVEW-IMAGE">
+                    </div>
+                    <div class="reviewer-name">
+                        <h3>Sun Yung Lee</h3>
+                    </div>
+                    <div class="reviewer-location">
+                        <p>Florida, US</p>
+                    </div>
+                    <div class="reviewer-statement">
+                        I can't say enough positive things about this platform. The courses are comprehensive and
+                        well-paced, with a perfect balance of theory and hands-on practice that allowed me to grasp
+                        complex concepts quickly.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="review-card">
+                    <div class="review-img">
+                        <img src="IMAGES/re (3).jpg" alt="REVEW-IMAGE">
+                    </div>
+                    <div class="reviewer-name">
+                        <h3>Darlene Robertson</h3>
+                    </div>
+                    <div class="reviewer-location">
+                        <p>Toronto, US</p>
+                    </div>
+                    <div class="reviewer-statement">
+                        The instructor's passion for photography was contagious, and the course projects were both fun
+                        and challenging. I've already seen an improvement in my photography skills. Overall, a great
+                        learning experience.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="review-card">
+                    <div class="review-img">
+                        <img src="IMAGES/re (4).jpg" alt="REVEW-IMAGE">
+                    </div>
+                    <div class="reviewer-name">
+                        <h3>
+                            Brooklyn Simmons
+                        </h3>
+                    </div>
+                    <div class="reviewer-location">
+                        <p>Texas, US</p>
+                    </div>
+                    <div class="reviewer-statement">
+                        I loved this course! The instructor broke down complex data analysis techniques in
+                        easy-to-understand concepts. I feel much more confident in my data analysis skills now. This
+                        course was fantastic.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="review-card">
+                    <div class="review-img">
+                        <img src="IMAGES/re (5).jpg" alt="REVEW-IMAGE">
+                    </div>
+                    <div class="reviewer-name">
+                        <h3>
+                            Leslie Alexander
+                        </h3>
+                    </div>
+                    <div class="reviewer-location">
+                        <p>New York,US</p>
+                    </div>
+                    <div class="reviewer-statement">
+                        This course exceeded my expectations! The instructor was patient and provided clear explanations
+                        throughout the course. I feel confident in my web development skills now. Highly recommend!
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="review-card">
+                    <div class="review-img">
+                        <img src="IMAGES/re (6).jpg" alt="REVEW-IMAGE">
+                    </div>
+                    <div class="reviewer-name">
+                        <h3>Ronald Richards
+                        </h3>
+                    </div>
+                    <div class="reviewer-location">
+                        <p>Grorgia, US</p>
+                    </div>
+                    <div class="reviewer-statement">
+                        This course provided a great introduction to creative writing techniques. The instructor's
+                        passion for writing was evident, and I appreciated the constructive feedback on my assignments.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="prev" id="prevBtn">&larr;</button>
+        <button class="next" id="nextBtn">&rarr;</button>
+
+    </div>
+
+   
+
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        :root {
+
+            /**
+ * colors
+ */
+
+            --selective-yellow: hsl(42, 94%, 55%);
+            --eerie-black-1: hsl(0, 0%, 9%);
+            --eerie-black-2: hsl(180, 3%, 7%);
+            --quick-silver: hsl(0, 0%, 65%);
+            --radical-red: hsl(351, 83%, 61%);
+            --light-gray: hsl(0, 0%, 80%);
+            --isabelline: hsl(36, 33%, 94%);
+            --gray-x-11: hsl(0, 0%, 73%);
+            --kappel_15: hsla(170, 75%, 41%, 0.15);
+            --platinum: hsl(0, 0%, 90%);
+            --gray-web: hsl(0, 0%, 50%);
+            --black_80: hsla(0, 0%, 0%, 0.8);
+            --white_50: hsla(0, 0%, 100%, 0.5);
+            --black_50: hsla(0, 0%, 0%, 0.5);
+            --black_30: hsla(0, 0%, 0%, 0.3);
+            --kappel: hsl(170, 75%, 41%);
+            --white: hsl(0, 0%, 100%);
+
+            /**
+ * gradient color
+ */
+
+            --gradient: linear-gradient(-90deg, hsl(151, 58%, 46%) 0%, hsl(170, 75%, 41%) 100%);
+
+            /**
+ * typography
+ */
+
+            --ff-Work_Sans: 'Work Sans', sans-serif;
+            --ff-Sans: 'Work Sans', sans-serif;
+
+            --fs-1: 4.2rem;
+            --fs-2: 3.2rem;
+            --fs-3: 2.3rem;
+            --fs-4: 1.8rem;
+            --fs-5: 1.5rem;
+            --fs-6: 1.4rem;
+            --fs-7: 1.3rem;
+
+            --fw-600: 600;
+            --fw-700: 700;
+
+            /**
+ * spacing
+ */
+
+            --section-padding: 70px;
+
+            /**
+ * shadow
+ */
+
+            --shadow-1: 0 6px 15px 0 hsla(0, 0%, 0%, 0.05);
+            --shadow-2: 0 10px 30px hsla(0, 0%, 0%, 0.06);
+            --shadow-3: 0 10px 50px 0 hsla(220, 53%, 22%, 0.1);
+
+            /**
+ * radius
+ */
+
+            --radius-pill: 400px;
+            --radius-circle: 50%;
+            --radius-3: 3px;
+            --radius-5: 5px;
+            --radius-10: 10px;
+
+            /**
+ * transition
+ */
+
+            --transition-1: 0.25s ease;
+            --transition-2: 0.5s ease;
+            --cubic-in: cubic-bezier(0.51, 0.03, 0.64, 0.28);
+            --cubic-out: cubic-bezier(0.33, 0.85, 0.4, 0.96);
+
+        }
+
+
+
+
+
+        /*-----------------------------------*\
+#RESET
+\*-----------------------------------*/
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a,
+        img,
+        span,
+        data,
+        input,
+        button,
+        ion-icon {
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            height: auto;
+        }
+
+        input,
+        button {
+            background: none;
+            border: none;
+            font: inherit;
+        }
+
+        input {
+            width: 100%;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        ion-icon {
+            pointer-events: none;
+        }
+
+        address {
+            font-style: normal;
+        }
+
+        html {
+            font-family: var(--ff-Sans);
+            font-size: 10px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--gray-web);
+            font-size: 1.6rem;
+            line-height: 1.75;
+        }
+
+        :focus-visible {
+            outline-offset: 4px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: hsl(0, 0%, 98%);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: hsl(0, 0%, 80%);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: hsl(0, 0%, 70%);
+        }
+
+
+
+
+
+        /*-----------------------------------*\
+#REUSED STYLE
+\*-----------------------------------*/
+
+        .container {
+            padding-inline: 15px;
+        }
+
+        .section {
+            padding-block: var(--section-padding);
+        }
+
+        .shape {
+            position: absolute;
+            display: none;
+        }
+
+        .has-bg-image {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .h1,
+        .h2,
+        .h3 {
+            color: var(--eerie-black-1);
+            font-family: var(--ff-Work_Sans);
+            line-height: 1;
+        }
+
+        .h1,
+        .h2 {
+            font-weight: var(--fw-700);
+        }
+
+        .h1 {
+            font-size: var(--fs-1);
+        }
+
+        .h2 {
+            font-size: var(--fs-2);
+        }
+
+        .h3 {
+            font-size: var(--fs-3);
+            font-weight: var(--fw-600);
+        }
+
+        .section-title {
+            --color: var(--radical-red);
+            text-align: center;
+        }
+
+        .section-title .span {
+            display: inline-block;
+            color: var(--color);
+        }
+
+        .btn {
+            background-color: var(--kappel);
+            color: var(--white);
+            font-family: var(--ff-league_spartan);
+            font-size: var(--fs-4);
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            max-width: max-content;
+            padding: 10px 20px;
+            border-radius: var(--radius-5);
+            overflow: hidden;
+        }
+
+        .has-before,
+        .has-after {
+            position: relative;
+            z-index: 1;
+        }
+
+        .has-before::before,
+        .has-after::after {
+            position: absolute;
+            content: "";
+        }
+
+        .btn::before {
+            inset: 0;
+            background-image: var(--gradient);
+            z-index: -1;
+            border-radius: inherit;
+            transform: translateX(-100%);
+            transition: var(--transition-2);
+        }
+
+        .btn:is(:hover, :focus)::before {
+            transform: translateX(0);
+        }
+
+        .img-holder {
+            aspect-ratio: var(--width) / var(--height);
+            background-color: var(--light-gray);
+            overflow: hidden;
+        }
+
+        .img-cover {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .section-subtitle {
+            font-size: var(--fs-5);
+            text-transform: uppercase;
+            font-weight: var(--fw-500);
+            letter-spacing: 1px;
+            text-align: center;
+            margin-block-end: 15px;
+        }
+
+        .section-text {
+            font-size: var(--fs-5);
+            text-align: center;
+            margin-block: 15px 25px;
+        }
+
+        .grid-list {
+            display: grid;
+            gap: 30px;
+        }
+
+        .category-card,
+        .stats-card {
+            background-color: hsla(var(--color), 0.1);
+        }
+
+        :is(.course, .blog) .section-title {
+            margin-block-end: 40px;
+        }
+
+
+
+
+
+        /*-----------------------------------*\
+#HEADER
+\*-----------------------------------*/
+
+        .header .btn {
+            display: none;
+        }
+
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            padding-block: 12px;
+            box-shadow: var(--shadow-1);
+            z-index: 4;
+        }
+
+        .header.active {
+            position: fixed;
+        }
+
+        .header .container,
+        .header-actions,
+        .navbar .wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-action-btn,
+        .nav-close-btn {
+            position: relative;
+            color: var(--eerie-black-1);
+            font-size: 24px;
+            transition: var(--transition-1);
+        }
+
+        .header-action-btn:is(:hover, :focus) {
+            color: var(--kappel);
+        }
+
+        .header-action-btn .btn-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: var(--kappel);
+            color: var(--white);
+            font-family: var(--ff-league_spartan);
+            font-size: var(--fs-6);
+            min-width: 20px;
+            height: 20px;
+            border-radius: var(--radius-circle);
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: -320px;
+            background-color: var(--white);
+            width: 100%;
+            max-width: 320px;
+            height: 100%;
+            z-index: 2;
+            transition: 0.25s var(--cubic-in);
+        }
+
+        .navbar.active {
+            transform: translateX(320px);
+            transition: 0.5s var(--cubic-out);
+        }
+
+        .navbar .wrapper {
+            padding: 15px 20px;
+            border-block-end: 1px solid var(--platinum);
+        }
+
+        .nav-close-btn {
+            background-color: var(--white);
+            box-shadow: var(--shadow-2);
+            padding: 8px;
+            border-radius: var(--radius-circle);
+        }
+
+        .nav-close-btn:is(:hover, :focus) {
+            background-color: var(--kappel);
+            color: var(--white);
+        }
+
+        .navbar-list {
+            padding: 15px 20px;
+        }
+
+        .navbar-item:not(:last-child) {
+            border-block-end: 1px solid var(--platinum);
+        }
+
+        .navbar-link {
+            padding-block: 8px;
+            font-weight: var(--fw-600);
+            transition: var(--transition-1);
+        }
+
+        .navbar-link:is(:hover, :focus) {
+            color: var(--kappel);
+        }
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background-color: var(--black_80);
+            pointer-events: none;
+            opacity: 0;
+            z-index: 1;
+            transition: var(--transition-1);
+        }
+
+        .overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+
+        /*Course Inner*/
+
+        #course-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 8vw;
+        }
+
+        #course-inner h2 {
+            color: black;
+            font-size: 25px;
+            padding: 25px 0px 25px 0;
+        }
+
+        #course-inner h3 {
+            padding: 35px 0px 25px 0;
+            color: black;
+            font-size: 25px;
+        }
+
+        #course-inner p {
+            color: #64626e;
+        }
+
+        #course-inner hr {
+            height: 1px;
+            background: rgba(236, 226, 229, 0.5);
+            margin-top: 30px;
+        }
+
+        #course-inner .overview {
+            width: 70%;
+        }
+
+        #course-inner .overview .course-img {
+            width: 100%;
+            height: 70vh;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        #course-inner .overview .course-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        #course-inner .overview .course-head .c-name {
+            width: 70%;
+        }
+
+        #course-inner .overview .course-head .c-name h2 {
+            color: #29303b;
+        }
+
+        #course-inner .overview .course-head .c-name .star i {
+            color: #FDC93B;
+            font-size: 2.9rem;
+        }
+
+        #course-inner .overview .course-head .c-name p {
+            font-size: 15px;
+        }
+
+        #course-inner .overview .course-head span {
+            padding: 13px 18px;
+            border-radius: 5px;
+            color: #5838fc;
+            font-size: 24px;
+            font-weight: 700;
+            background-color: rgba(88, 56, 252, 0.3);
+        }
+
+        #course-inner .learn p {
+            font-size: 18px;
+            padding-bottom: 15px;
+        }
+
+        #course-inner .learn p i {
+            color: #654ce4;
+            font-weight: 700;
+            margin-right: 20px;
+        }
+
+        #course-inner .tutor {
+            display: flex;
+        }
+
+        #course-inner .tutor img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        #course-inner .tutor .tutor-det h5 {
+            color: black;
+            font-size: 20px;
+        }
+
+        #course-inner .tutor .tutor-det p {
+            color: #29303b;
+            font-weight: 600;
+        }
+
+        #course-inner .enroll {
+            width: 300px;
+            padding: 0 30px 30px 30px;
+            border-radius: 11px;
+            margin-top: 30px;
+            box-shadow: 0 20px 40px 0 rgba(11 2 55 / 8%);
+        }
+
+        #course-inner .enroll h3 {
+            padding-bottom: 10px;
+        }
+
+        #course-inner .enroll p {
+            font-size: 15px;
+            color: #64626e;
+            margin: 15px 0;
+            font-size: 15px;
+        }
+
+        #course-inner .enroll p i {
+            color: #654ce4;
+            font-weight: 500;
+            margin-right: 18px;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        #course-inner .enroll p i:hover {
+            transform: translateY(-5px);
+        }
+
+        #course-inner .enroll .enroll-btn {
+            padding: 25px 0 20px 0;
+            margin: auto;
+            text-align: center;
+        }
+
+        #course-inner .enroll .enroll-btn a {
+            text-decoration: none;
+            font-size: 0.8rem;
+            padding: 13px 45px;
+            font-weight: 600;
+            border-radius: 5px;
+            color: #fff;
+            background-color: lightseagreen;
+            font-size: 15px;
+        }
+
+        #course-inner .enroll .enroll-btn a:hover {
+            background-color: lightpink;
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 769px) {
+            #course-inner {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 8vw 4vw;
+            }
+
+            #course-inner .overview {
+                width: 100%;
+            }
+
+            #course-inner .overview .course-img {
+                width: 100%;
+                height: 100%;
+            }
+
+            #course-inner .enroll {
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 475px) {
+            #course-inner .overview .course-head .c-name {
+                width: 50%;
+            }
+
+            #course-inner .overview .course-head .c-name h2 {
+                font-size: 22px;
+            }
+
+            #course-inner .overview .course-head span {
+                font-size: 22px;
+            }
+
+            #course-inner .enroll {
+                width: 100%;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*-----------------------------------*\
+#FOOTER
+\*-----------------------------------*/
+
+        .footer {
+            background-repeat: no-repeat;
+            background-color: var(--eerie-black-2);
+            color: var(--gray-x-11);
+            font-size: var(--fs-5);
+        }
+
+        .footer-top {
+            display: grid;
+        }
+
+        .footer-brand-text {
+            margin-block: 20px;
+        }
+
+        .footer-brand .wrapper {
+            display: flex;
+            gap: 5px;
+        }
+
+        .footer-brand .wrapper .span {
+            font-weight: var(--fw-600);
+        }
+
+        .footer-link {
+            transition: var(--transition-1);
+        }
+
+        .footer-link:is(:hover, :focus) {
+            color: var(--kappel);
+        }
+
+        .footer-list-title {
+            color: var(--white);
+            font-family: var(--ff-league_spartan);
+            font-size: var(--fs-3);
+            font-weight: var(--fw-600);
+            margin-block-end: 5px;
+        }
+
+        .footer-list .footer-link {
+            padding-block: 5px;
+        }
+
+        .newsletter-form {
+            margin-block: 20px 35px;
+        }
+
+        .newsletter-form .input-field {
+            background-color: var(--white);
+            padding: 12px;
+            border-radius: var(--radius-5);
+            margin-block-end: 20px;
+        }
+
+        .newsletter-form .btn {
+            min-width: 100%;
+            justify-content: center;
+        }
+
+        .social-list {
+            display: flex;
+            gap: 25px;
+        }
+
+        .social-link {
+            font-size: 20px;
+        }
+
+        .footer-bottom {
+            border-block-start: 1px solid var(--eerie-black-1);
+            padding-block: 20px;
+        }
+
+        .copyright {
+            text-align: center;
+        }
+
+        .copyright-link {
+            color: var(--kappel);
+            display: inline-block;
+        }
+
+
+
+
+        /*-----------------------------------*\
+#MEDIA QUERIES
+\*-----------------------------------*/
+
+        /**
+* responsive for large than 575px screen
+*/
+
+        @media (min-width: 575px) {
+
+            /**
+ * REUSED STYLE
+ */
+
+            .container {
+                max-width: 520px;
+                width: 100%;
+                margin-inline: auto;
+            }
+
+            .grid-list {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            :is(.course, .blog) .grid-list {
+                grid-template-columns: 1fr;
+            }
+
+
+
+            /**
+ * HEADER
+ */
+
+            .header .container {
+                max-width: unset;
+            }
+
+            .header-actions {
+                gap: 30px;
+            }
+
+
+
+            /**
+ * HERO
+ */
+
+            .hero-banner {
+                grid-template-columns: 1fr 0.9fr;
+            }
+
+            /**
+ * FOOTER
+ */
+
+            .footer-brand,
+            .footer-list:last-child {
+                grid-column: 1 / 3;
+            }
+
+            .newsletter-form {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .newsletter-form .input-field {
+                margin-block-end: 0;
+            }
+
+            .newsletter-form .btn {
+                min-width: max-content;
+            }
+
+        }
+
+
+
+
+
+        /**
+* responsive for large than 768px screen
+*/
+
+        @media (min-width: 768px) {
+
+            /**
+ * CUSTOM PROPERTY
+ */
+
+            :root {
+
+                /**
+   * typography
+   */
+
+                --fs-1: 4.6rem;
+                --fs-2: 3.8rem;
+
+            }
+
+
+
+            /**
+ * REUSED STYLE
+ */
+
+            .container {
+                max-width: 720px;
+            }
+
+            .btn {
+                padding: 15px 30px;
+            }
+
+            :is(.course, .blog) .grid-list {
+                grid-template-columns: 1fr 1fr;
+            }
+
+
+
+            /**
+ * HEADER
+ */
+
+            .header .container {
+                padding-inline: 30px;
+            }
+
+            .header .btn {
+                display: flex;
+                padding: 10px 30px;
+                margin-inline: 20px;
+            }
+
+
+
+            /**
+ * HERO
+ */
+
+            .hero {
+                padding-block-start: calc(var(--section-padding) + 90px);
+            }
+
+            .hero .container {
+                gap: 50px;
+            }
+
+            .hero-text {
+                margin-block-end: 30px;
+            }
+
+            .hero-banner {
+                position: relative;
+                z-index: 1;
+            }
+
+            .hero-banner .img-holder {
+                max-width: max-content;
+            }
+
+            .hero-banner .img-holder.one {
+                justify-self: flex-end;
+            }
+
+            .hero-banner .img-holder.two {
+                margin-block-start: 100px;
+            }
+
+            .hero-shape-1 {
+                display: block;
+                position: absolute;
+                bottom: -40px;
+                left: -10px;
+            }
+
+
+
+
+
+
+
+            /**
+ * FOOTER
+ */
+
+            .footer-brand,
+            .footer-list:last-child {
+                grid-column: auto;
+            }
+
+            .newsletter-form .btn {
+                padding-block: 10px;
+            }
+
+        }
+
+        /**
+* responsive for large than 992px screen
+*/
+
+        @media (min-width: 992px) {
+
+            /**
+ * CUSTOM PROPERTY
+ */
+
+            :root {
+
+                /**
+   * typography
+   */
+
+                --fs-1: 5.5rem;
+                --fs-2: 4.5rem;
+
+            }
+
+            /**
+ * REUSED STYLE
+ */
+
+            .container {
+                max-width: 960px;
+            }
+
+            .grid-list {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            :is(.course, .blog) .grid-list {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            /**
+ * HERO
+ */
+
+            .hero .container {
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+            }
+
+            .hero .section-title,
+            .hero-text {
+                text-align: left;
+            }
+
+            .hero .btn {
+                margin-inline: 0;
+            }
+
+            /**
+ * ABOUT
+ */
+
+            .about .container {
+                grid-template-columns: 1fr 0.6fr;
+                align-items: center;
+                gap: 60px;
+            }
+
+            /**
+ * FOOTER
+ */
+
+            .footer .grid-list {
+                grid-template-columns: 1fr 0.6fr 0.6fr 1.2fr;
+            }
+
+        }
+
+        /**
+* responsive for large than 1200px screen
+*/
+
+        @media (min-width: 1200px) {
+
+            /**
+ * CUSTOM PROPERTY
+ */
+
+            :root {
+
+                /**
+   * typography
+   */
+
+                --fs-1: 6.5rem;
+
+                /**
+   * spacing
+   */
+
+                --section-padding: 120px;
+
+            }
+
+            /**
+ * REUSED STYLE
+ */
+
+            .container {
+                max-width: 1185px;
+            }
+
+            .shape {
+                display: block;
+            }
+
+            .about-content {
+                position: relative;
+            }
+
+            /**
+ * HEADER
+ */
+
+            .header-action-btn:last-child,
+            .navbar .wrapper,
+            .overlay {
+                display: none;
+            }
+
+            .header.active {
+                transform: translateY(-100%);
+                animation: slideIn 0.5s ease forwards;
+            }
+
+            @keyframes slideIn {
+                0% {
+                    transform: translateY(-100%);
+                }
+
+                100% {
+                    transform: translateY(0);
+                }
+            }
+
+            .navbar,
+            .navbar.active {
+                all: unset;
+            }
+
+            .navbar-list {
+                display: flex;
+                gap: 50px;
+                padding: 0;
+            }
+
+            .navbar-item:not(:last-child) {
+                border-block-end: none;
+            }
+
+            .navbar-link {
+                color: var(--eerie-black-1);
+                padding-block: 20px;
+            }
+
+            .header .btn {
+                margin-inline-end: 0;
+            }
+
+            /**
+ * HERO
+ */
+
+            .hero {
+                padding-block-start: calc(var(--section-padding) + 120px);
+            }
+
+            .hero .container {
+                gap: 80px;
+            }
+
+            .hero-shape-2 {
+                top: -80px;
+                z-index: -1;
+            }
+
+            /**
+ * ABOUT
+ */
+
+            .about .container {
+                gap: 110px;
+            }
+
+            .about-banner .img-holder {
+                margin-inline: 0;
+            }
+
+            .about-shape-3 {
+                top: -20px;
+                left: -100px;
+                z-index: -1;
+            }
+
+            .about-content {
+                z-index: 1;
+            }
+
+            .about-shape-4 {
+                top: 30px;
+                right: -60px;
+                z-index: -1;
+            }
+        }
+    </style>
+
+    <!-- 
+        - primary meta tag
+      -->
+    <title>GR Course</title>
+    <!-- 
+        - favicon
+      -->
+    <link rel="shortcut icon" href="Images/logo.jpg" type="image/svg+xml" />
+    <!-- 
+        - custom css link
+      -->
+
+
+    <!-- 
+        - google font link
+      -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css?family=Work Sans" rel="stylesheet" />
+</head>
+
+<body>
+    <header class="header" data-header>
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="Images/logo.jpg" width="50" height="25" alt="logo" />
+            </a>
+
+            <nav class="navbar" data-navbar>
+                <div class="wrapper">
+                    <a href="#" class="logo">
+                        <img src="Images/logo.jpg" width="50" height="20" alt="logo" />
+                    </a>
+
+                    <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+                        <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+                    </button>
+                </div>
+
+                <ul class="navbar-list">
+                    <li class="navbar-item">
+                        <a href="#home" class="navbar-link" data-nav-link>Home</a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="#about" class="navbar-link" data-nav-link>About</a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="courses.html" class="navbar-link" data-nav-link>Courses</a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="blog.html" class="navbar-link" data-nav-link>Blog</a>
+                    </li>
+
+                    <li class="navbar-item">
+                        <a href="#" class="navbar-link" data-nav-link>Contact</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="header-action-btn" aria-label="toggle search" title="Search">
+                    <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
+                </button>
+
+                <button class="header-action-btn" aria-label="heart" title="Heart">
+                    <ion-icon name="heart-circle-outline">
+                        aria-hidden="true"></ion-icon>
+
+                    <span class="btn-badge">0</span>
+                </button>
+
+                <a href="#" class="btn has-before">
+                    <span class="span">Enroll Now</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                </a>
+
+                <button class="header-action-btn" aria-label="open menu" data-nav-toggler>
+                    <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+                </button>
+            </div>
+
+            <div class="overlay" data-nav-toggler data-overlay></div>
+        </div>
+    </header>
+
+    <section id="course-inner">
+        <div class="overview">
+            <h2>Enroll Our Courses and Create Stunning Designs:</h2>
+            <img class="course-img" src="Images/dataanalyst.jpg" alt="" />
+            <div class="course-head">
+                <div class="c-name">
+                    <h2>Javascript Beginner Course</h2>
+                    <div class="star">
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star-half"></i>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectur adipiscing elit sed eiusmod
+                        ex tempor incididunt labore dolore magna aliquaenim
+                    </p>
+                </div>
+                <span>$49.00</span>
+            </div>
+            <h3>Instructor</h3>
+            <div class="tutor">
+                <img src="Images/blog-2.jpg" alt="" />
+                <div class="tutor-det">
+                    <h5>Emily Joes</h5>
+                    <p>Web Developer at Google</p>
+                </div>
+            </div>
+            <hr />
+            <h3>Course Overview</h3>
+            <p>
+                Welcome to our Courses section, where learning meets opportunity! Dive
+                into a world of knowledge with our curated selection of courses
+                spanning a wide array of subjects. Whether you're a seasoned
+                professional looking to stay ahead of the curve or a newcomer eager to
+                explore new horizons, our courses offer something for everyone.
+                Discover a gateway to endless possibilities through our Courses
+                section, where learning is not just a destination but a transformative
+                journey. Join us on a transformative learning journey and unlock a
+                world of possibilities today!<br /><br />Explore a diverse range of
+                courses designed to empower you with the knowledge and skills needed
+                to succeed in today's competitive landscape. Our comprehensive
+                selection covers various topics, from business and technology to arts
+                and personal development. Enroll today and embark on a journey of
+                learning and growth with us!<br /><br />Explore a diverse range of
+                courses designed to empower you with the knowledge and skills needed
+                to succeed in today's competitive landscape. Our comprehensive
+                selection covers various topics, from business and technology to arts
+                and personal development. Enroll today and embark on a journey of
+                learning and growth with us! ‍
+            </p>
+            <hr />
+            <h3>What You'll Learn</h3>
+            <div class="learn">
+                <p>
+                    <i class="bx bxs-check-circle"></i>
+                    Get practical skills through interactive exercises and projects.
+                </p>
+                <p>
+                    <i class="bx bxs-check-circle"></i>
+                    Develop crucial skills like critical thinking and communication.
+                </p>
+                <p>
+                    <i class="bx bxs-check-circle"></i>
+                    Choose from self paced modules or live lectures for convenience.
+                </p>
+                <p>
+                    <i class="bx bxs-check-circle"></i>Stay updated with the latest
+                    industry trends and technologies.
+                </p>
+            </div>
+            <div class="btn">
+                <a href="https://gowthamrajnetwork.com/subscription/plans/">Enroll Courses <i
+                        class="bx bx-right-arrow-alt"></i></a>
+            </div>
+        </div>
+        <div class="enroll">
+            <h3>This Course Includes:</h3>
+            <p><i class="bx bxs-video"></i>52 Hours Video</p>
+            <p><i class="bx bxs-news"></i>75 Articles</p>
+            <p><i class="bx bxs-cloud-download"></i>Downloadable Resources</p>
+            <p><i class="bx bxs-color"></i>Fulltime Access</p>
+            <p><i class="bx bxs-devices"></i>Access on mobile and Pc</p>
+            <p><i class="bx bxs-paper-plane"></i>Assignment</p>
+            <p><i class="bx bxs-trophy"></i>Certification of completion.</p>
+            <div class="enroll-btn">
+                <a class="blue" href="https://gowthamrajnetwork.com/subscription/plans/">Enroll Course</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" style="background-image: url('./assets/images/footer-bg.png')">
+        <div class="footer-top section">
+            <div class="container grid-list">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <img src="Images/logo.jpg" width="162" height="50" alt="logo" />
+                    </a>
+
+                    <p class="footer-brand-text">
+                        Lorem ipsum dolor amet consecto adi pisicing elit sed eiusm tempor
+                        incidid unt labore dolore.
+                    </p>
+
+                    <div class="wrapper">
+                        <span class="span">Add:</span>
+
+                        <address class="address">70-80 Upper St Norwich NR2</address>
+                    </div>
+
+                    <div class="wrapper">
+                        <span class="span">Call:</span>
+
+                        <a href="tel:+011234567890" class="footer-link">+01 123 4567 890</a>
+                    </div>
+
+                    <div class="wrapper">
+                        <span class="span">Email:</span>
+
+                        <a href="mailto:info@eduweb.com" class="footer-link">info@grnetworks.com</a>
+                    </div>
+                </div>
+
+                <ul class="footer-list">
+                    <li>
+                        <p class="footer-list-title">Online Platform</p>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">About</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Courses</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Instructor</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Events</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Instructor Profile</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Purchase Guide</a>
+                    </li>
+                </ul>
+
+                <ul class="footer-list">
+                    <li>
+                        <p class="footer-list-title">Links</p>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Contact Us</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Gallery</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">News & Articles</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">FAQ's</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Sign In/Registration</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Coming Soon</a>
+                    </li>
+                </ul>
+
+                <div class="footer-list">
+                    <p class="footer-list-title">Contacts</p>
+
+                    <p class="footer-list-text">
+                        Enter your email address to register to our newsletter
+                        subscription
+                    </p>
+
+                    <form action="" class="newsletter-form">
+                        <input type="email" name="email_address" placeholder="Your email" required
+                            class="input-field" />
+
+                        <button type="submit" class="btn has-before">
+                            <span class="span">Subscribe</span>
+
+                            <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                        </button>
+                    </form>
+
+                    <ul class="social-list">
+                        <li>
+                            <a href="https://www.facebook.com/gowthamrajnetwork" class="social-link">
+                                <ion-icon name="logo-facebook"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://in.linkedin.com/in/gowthamrajceg" class="social-link">
+                                <ion-icon name="logo-linkedin"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.instagram.com/gowthamraj_ceg/" class="social-link">
+                                <ion-icon name="logo-instagram"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" class="social-link">
+                                <ion-icon name="logo-twitter"></ion-icon>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://www.youtube.com/@GOWTHAMRAJNETWORK" class="social-link">
+                                <ion-icon name="logo-youtube"></ion-icon>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="copyright">
+                    Copyright 2022 All Rights Reserved by
+                    <a href="#" class="copyright-link">GR Networks.com</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+
+        'use strict';
+
+
+
+        /**
+         * add event on element
+         */
+
+        const addEventOnElem = function (elem, type, callback) {
+            if (elem.length > 1) {
+                for (let i = 0; i < elem.length; i++) {
+                    elem[i].addEventListener(type, callback);
+                }
+            } else {
+                elem.addEventListener(type, callback);
+            }
+        }
+
+
+
+        /**
+         * navbar toggle
+         */
+
+        const navbar = document.querySelector("[data-navbar]");
+        const navTogglers = document.querySelectorAll("[data-nav-toggler]");
+        const navLinks = document.querySelectorAll("[data-nav-link]");
+        const overlay = document.querySelector("[data-overlay]");
+
+        const toggleNavbar = function () {
+            navbar.classList.toggle("active");
+            overlay.classList.toggle("active");
+        }
+
+        addEventOnElem(navTogglers, "click", toggleNavbar);
+
+        const closeNavbar = function () {
+            navbar.classList.remove("active");
+            overlay.classList.remove("active");
+        }
+
+        addEventOnElem(navLinks, "click", closeNavbar);
+
+
+
+        /**
+         * header active when scroll down to 100px
+         */
+
+        const header = document.querySelector("[data-header]");
+        const backTopBtn = document.querySelector("[data-back-top-btn]");
+
+        const activeElem = function () {
+            if (window.scrollY > 100) {
+                header.classList.add("active");
+                backTopBtn.classList.add("active");
+            } else {
+                header.classList.remove("active");
+                backTopBtn.classList.remove("active");
+            }
+        }
+
+        addEventOnElem(window, "scroll", activeElem);
+    </script>
+</body>
+
+</html>

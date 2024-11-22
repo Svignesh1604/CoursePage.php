@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science Course Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color: cadetblue;
+            transition: background-color 0.3s ease;
+        }
+
+        body:hover {
+            background-color: #5f9ea0;
+            /* Darker shade for hover effect */
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: mediumaquamarine;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease, transform 0.2s;
+        }
+
+        .back-btn:hover {
+            color: lightgreen;
+            transform: scale(1.1);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        /* Main Content Styles */
+        .course-detail {
+            padding: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease, transform 0.2s ease;
+        }
+
+        .course-detail:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .course-overview,
+        .course-content,
+        .course-image {
+            margin-bottom: 20px;
+        }
+
+        .course-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .course-image img:hover {
+            transform: scale(1.05);
+            filter: brightness(0.9);
+        }
+
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+
+        ul li {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+            transition: color 0.3s ease, transform 0.3s;
+        }
+
+        ul li:hover {
+            color: #4CAF50;
+            transform: translateX(10px);
+        }
+
+        ul li::before {
+            content: "•";
+            color: #4CAF50;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Footer Styles */
+        .footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            margin-top: 20px;
+            font-size: 14px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #4CAF50, transparent);
+            animation: slide 3s linear infinite;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(-50%);
+            }
+
+            100% {
+                transform: translateX(50%);
+            }
+        }
+
+        /* Keyframe Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Default styles (Desktop view - above 1024px) */
+        @media (min-width: 1025px) {
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .course-detail {
+                padding: 30px;
+                max-width: 1200px;
+            }
+
+            ul li {
+                font-size: 18px;
+            }
+
+            .footer {
+                font-size: 16px;
+            }
+        }
+
+        /* Tablet view (between 768px and 1024px) */
+        @media (max-width: 1024px) and (min-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+
+            .header {
+                padding: 8px 15px;
+            }
+
+            .header h1 {
+                font-size: 22px;
+            }
+
+            .course-detail {
+                padding: 20px;
+                max-width: 800px;
+            }
+
+            ul li {
+                font-size: 16px;
+            }
+
+            .footer {
+                font-size: 14px;
+                padding: 8px 0;
+            }
+        }
+
+        /* Mobile view (below 768px) */
+        @media (max-width: 767px) {
+            body {
+                font-size: 14px;
+            }
+
+            .header {
+                padding: 6px 10px;
+                text-align: left;
+            }
+
+            .back-btn {
+                font-size: 16px;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .course-detail {
+                padding: 15px;
+                margin: 15px;
+            }
+
+            .course-image img {
+                border-radius: 5px;
+            }
+
+            ul li {
+                font-size: 14px;
+            }
+
+            .footer {
+                font-size: 12px;
+                padding: 6px 0;
+            }
+        }
+
+        /* Extra Small Mobile view (max-width: 480px) */
+        @media (max-width: 480px) {
+            body {
+                font-size: 12px;
+                line-height: 1.4;
+            }
+
+            .header {
+                padding: 5px 8px;
+                text-align: center;
+            }
+
+            .back-btn {
+                font-size: 14px;
+            }
+
+            .header h1 {
+                font-size: 18px;
+            }
+
+            .course-detail {
+                padding: 10px;
+                margin: 10px;
+                border-radius: 5px;
+            }
+
+            .course-overview,
+            .course-content,
+            .course-image {
+                margin-bottom: 15px;
+            }
+
+            .course-image img {
+                border-radius: 4px;
+            }
+
+            .course-image1 img {
+                width: 300px;
+            }
+
+            ul li {
+                font-size: 12px;
+            }
+
+            ul li::before {
+                font-size: 10px;
+            }
+
+            .footer {
+                font-size: 10px;
+                padding: 4px 0;
+            }
+
+            .footer::after {
+                height: 1px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav>
+            <a href="ExploreCourses.html" class="back-btn">← Back to Home</a>
+            <h1>Data Analyst Course</h1>
+        </nav>
+    </header>
+    <main class="course-detail">
+        <section class="course-overview">
+            <h2>Course Overview</h2>
+            <p>The collection, transformation, and organization of data to draw conclusions make predictions for the
+                future and make informed data-driven decisions is called Data Analysis. The profession that handles data
+                analysis is called a Data Analyst..</p>
+        </section>
+        <section class="course-content">
+            <h2>What You’ll Learn</h2>
+            <ul>
+                <li>Data collection and cleaning techniques</li>
+                <li>Statistical analysis and visualization</li>
+                <li>Machine learning fundamentals</li>
+                <li>Big data tools like Hadoop and Spark</li>
+                <li>Real-world applications through projects and internships</li>
+            </ul>
+        </section>
+
+        <section class="course-image">
+            <img src="Images/dataanalyst.jpg" alt="Data analyst Course Image">
+        </section>
+
+        <br>
+        <p>
+            There is a huge demand for Data Analysts as the data is expanding rapidly nowadays. Data Analysis is used to
+            find possible solutions for a business problem. The advantage of being a Data Analyst is that they can work
+            in any field they love healthcare, agriculture, IT, finance, business. Data-driven decision-making is an
+            important part of Data Analysis. It makes the analysis process much easier. There are six steps for Data
+            Analysis.
+        </p>
+        <br>
+
+        <section class="course-image1">
+            <img src="Images/course-3.jpg" alt="Data analyst Course Image">
+        </section>
+
+        <br>
+        <section class="course-content">
+            <ul>
+                <li>In the first step of process the data analyst is given a problem/business task. The analyst has to
+                    understand the task and the stakeholder’s expectations for the solution. .</li>
+                <li>The second step is to Prepare or Collect the Data. This step includes collecting data and storing it
+                    for further analysis. The analyst has to collect the data based on the task given from multiple
+                    sources..</li>
+                <li>The third step is Clean and Process Data. After the data is collected from multiple sources, it is
+                    time to clean the data. Clean data means data that is free from misspellings, redundancies, and
+                    irrelevance. </li>
+            </ul>
+        </section>
+        <footer class="footer">
+            <p>© 2024 Your Company. All Rights Reserved.</p>
+        </footer>
+    </main>
+</body>
+
+</html>
